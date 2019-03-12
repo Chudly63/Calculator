@@ -3,6 +3,9 @@ import java.awt.event.*;
 
 public class CalcView{
     public static void main(String [] args){
+
+        CalcController control = CalcController.getInstance();
+
         JFrame frame = new JFrame("Calculator");
         JButton btnOne = new JButton("1");
         JButton btnTwo = new JButton("2");
@@ -48,23 +51,23 @@ public class CalcView{
         tfDisplay.setText("Welcome to Alex's Calculator");
 
 
-        btnOne.addActionListener(new CalcController());
-        btnTwo.addActionListener(new CalcController());
-        btnThree.addActionListener(new CalcController());
-        btnFour.addActionListener(new CalcController());
-        btnFive.addActionListener(new CalcController());
-        btnSix.addActionListener(new CalcController());
-        btnSeven.addActionListener(new CalcController());
-        btnEight.addActionListener(new CalcController());
-        btnNine.addActionListener(new CalcController());
-        btnZero.addActionListener(new CalcController());
+        btnOne.addActionListener(control);
+        btnTwo.addActionListener(control);
+        btnThree.addActionListener(control);
+        btnFour.addActionListener(control);
+        btnFive.addActionListener(control);
+        btnSix.addActionListener(control);
+        btnSeven.addActionListener(control);
+        btnEight.addActionListener(control);
+        btnNine.addActionListener(control);
+        btnZero.addActionListener(control);
 
-        btnEqual.addActionListener(new CalcController());
-        btnClear.addActionListener(new CalcController());
-        btnPlus.addActionListener(new CalcController());
-        btnMinus.addActionListener(new CalcController());
-        btnMultiply.addActionListener(new CalcController());
-        btnDivide.addActionListener(new CalcController());
+        btnEqual.addActionListener(control);
+        btnClear.addActionListener(control);
+        btnPlus.addActionListener(control);
+        btnMinus.addActionListener(control);
+        btnMultiply.addActionListener(control);
+        btnDivide.addActionListener(control);
 
 
         frame.add(btnOne);
