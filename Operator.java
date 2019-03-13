@@ -7,8 +7,8 @@ public class Operator implements EquationItem{
         myType = type;
     }
 
-    public void accept(Visitor visitor){
-        visitor.visitOperator(this);
+    public double accept(Visitor visitor){
+        return visitor.visitOperator(this);
     }
 
     public EquationItem getRight(){

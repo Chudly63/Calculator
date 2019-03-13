@@ -5,8 +5,8 @@ public class Operand implements EquationItem{
         myValue = value;
     }
 
-    public void accept(Visitor visitor){
-        visitor.visitOperand(this);
+    public double accept(Visitor visitor){
+        return visitor.visitOperand(this);
     }
 
     public int getValue(){
