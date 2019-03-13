@@ -1,6 +1,6 @@
 view:
-	javac CalcView.java
-	java CalcView
+	javac Calculator.java
+	java Calculator
 
 rm:
 	rm *.class

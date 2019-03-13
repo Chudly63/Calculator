@@ -1,3 +1,3 @@
 public interface EquationItem{
-    public double accept(Visitor visitor);
+    public String accept(Visitor visitor);
 }

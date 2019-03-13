@@ -9,7 +9,7 @@ public class StateOperator extends State{
 
         Operator currentRoot = (Operator)getRoot();
         currentRoot.setRight(newOperand);
-        setRoot(currentRoot);
+        setRoot(currentRoot);   
 
         setState(new StateSecond());    
     }

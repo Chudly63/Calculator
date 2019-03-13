@@ -1,21 +1,24 @@
 public class VisitorCalculate implements Visitor{
-    public double visitOperand(Operand operand){
+    public String visitOperand(Operand operand){
         return operand.getValue();
     }
 
-    public double visitOperator(Operator operator){
+    public String visitOperator(Operator operator){
+        double left = Double.parseDouble(operator.getLeft().accept(this));
+        double right = Double.parseDouble(operator.getRight().accept(this));
+
         switch(operator.getType()){
             case "+":
-                return operator.getLeft().accept(this) + operator.getRight().accept(this);
+                return (left + right) + "";
             case "-":
-                return operator.getLeft().accept(this) - operator.getRight().accept(this);
+                return (left - right) + "";
             case "*":
-                return operator.getLeft().accept(this) * operator.getRight().accept(this);
+                return (left * right) + "";
             case "/":
-                return operator.getLeft().accept(this) / operator.getRight().accept(this);
+                return (left / right) + "";
             default:
                 System.out.println("ERROR");
         }
-        return 0;
+        return "";
     }
 }

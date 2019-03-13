@@ -15,20 +15,26 @@ public class StateSecond extends State{
 
         Operator currentRoot = (Operator)getRoot();
         Operand currentOperand = (Operand)currentRoot.getRight();
-        currentOperand.setValue(currentOperand.getValue() * 10 + newOperand.getValue());
+        int currentValue = Integer.parseInt(currentOperand.getValue());
+        int newValue = currentValue * 10 + Integer.parseInt(newOperand.getValue());
+        currentOperand.setValue("" + newValue);
         currentRoot.setRight(currentOperand);
         setRoot(currentRoot);
 
     }
 
     public void calculate(){
-        System.out.println("CALCULATE");
-        System.out.println("Second -> Start");   
+        System.out.println("Second -> Calc");   
 
         VisitorCalculate test = new VisitorCalculate();
-        System.out.println("RESULT: " + getRoot().accept(test));
-        setRoot(null);
+        String result = getRoot().accept(test);
 
-        setState(new StateStart());
+        //Remove trailing 0's and .'s
+        while((result.endsWith("0") && result.contains(".")) || result.endsWith(".")){
+            result = result.substring(0,result.length()-1);
+        }
+
+        setRoot(new Operand(result));
+        setState(new StateCalc());
     }
 }

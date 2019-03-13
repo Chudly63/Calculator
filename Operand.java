@@ -1,19 +1,19 @@
 public class Operand implements EquationItem{
-    private int myValue;
+    private String myValue;
 
-    public Operand(int value){
+    public Operand(String value){
         myValue = value;
     }
 
-    public double accept(Visitor visitor){
+    public String accept(Visitor visitor){
         return visitor.visitOperand(this);
     }
 
-    public int getValue(){
+    public String getValue(){
         return myValue;
     }
 
-    public void setValue(int i){
+    public void setValue(String i){
         myValue = i;
     }
 }

@@ -6,6 +6,7 @@ public class CalcController implements ActionListener{
 
     private EquationItem root;
     private State currentState = new StateStart();
+    private CalcView observer;
 
     private CalcController(){}
 
@@ -26,7 +27,7 @@ public class CalcController implements ActionListener{
             case "7":
             case "8":
             case "9":
-                currentState.newOperand(new Operand(Integer.parseInt(e.getActionCommand())));
+                currentState.newOperand(new Operand(e.getActionCommand()));
                 break;
             case "+":
             case "-":
@@ -35,7 +36,6 @@ public class CalcController implements ActionListener{
                 currentState.newOperator(new Operator(e.getActionCommand()));
                 break;
             case "C":
-                System.out.println("Clear");
                 root = null;
                 currentState = new StateStart();
                 break;
@@ -46,9 +46,20 @@ public class CalcController implements ActionListener{
                 System.out.println("oops");
         }
         VisitorPrint test = new VisitorPrint();
+
         if(root != null)
-            root.accept(test);
-        System.out.println("");
+            update(root.accept(test));
+        else   
+            update("");
+
+    }
+
+    public void attach(CalcView view){
+        observer = view;
+    }
+
+    private void update(String text){
+        observer.update(text);
     }
 
     public EquationItem getRoot(){

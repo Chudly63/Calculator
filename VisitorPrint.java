@@ -1,16 +1,15 @@
 public class VisitorPrint implements Visitor{
 
-    public double visitOperand(Operand operand){
+    public String visitOperand(Operand operand){
 
-        System.out.print(operand.getValue() + " ");
-        return 0;
+        return operand.getValue() + " ";
     }
 
-    public double visitOperator(Operator operator){
-        operator.getLeft().accept(this);
-        System.out.print(operator.getType() + " ");
+    public String visitOperator(Operator operator){
+        String left = operator.getLeft().accept(this);
+        String right = "";
         if(operator.getRight() != null)
-            operator.getRight().accept(this);
-        return 0;
+            right = operator.getRight().accept(this);
+        return(left + operator.getType() + " " + right);
     }
 }

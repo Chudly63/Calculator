@@ -2,7 +2,15 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class CalcView{
-    public static void main(String [] args){
+
+    public CalcView(){}
+
+    private static JTextField tfDisplay;
+
+    public void update(String text){
+        tfDisplay.setText(text);
+    }
+    public void display(){
 
         CalcController control = CalcController.getInstance();
 
@@ -25,7 +33,7 @@ public class CalcView{
         JButton btnMultiply = new JButton("*");
         JButton btnDivide = new JButton("/");
 
-        JTextField tfDisplay = new JTextField();
+        tfDisplay = new JTextField();
 
 
         btnOne.setBounds(10,70,50,50);

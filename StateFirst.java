@@ -13,9 +13,9 @@ public class StateFirst extends State{
         System.out.println("First -> First");
 
         Operand test = (Operand)getRoot();
-        int originalValue = test.getValue();
-        int newValue = originalValue * 10 + newOperand.getValue();
-        newOperand.setValue(newValue);
+        int originalValue = Integer.parseInt(test.getValue());
+        int newValue = originalValue * 10 + Integer.parseInt(newOperand.getValue());
+        newOperand.setValue(""+newValue);
         //System.out.println(""+newValue);
         setRoot(newOperand);
         
