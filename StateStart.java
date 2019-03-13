@@ -6,7 +6,10 @@ public class StateStart extends State{
 
     public void newOperand(Operand newOperand){
         System.out.println("Start -> First");
-        setState(new StateFirst());
+
+        setRoot(newOperand);
+
+        setState(new StateFirst());        
     }
 
     public void calculate(){

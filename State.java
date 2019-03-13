@@ -1,13 +1,26 @@
 public abstract class State{
 
-    private CalcController control = CalcController.getInstance();
+    private CalcController control;
 
     protected void setState(State newState){
         if(control == null){
-            System.out.println("Huh?");
             control = CalcController.getInstance();
         }
         control.setState(newState);
+    }
+
+    protected void setRoot(EquationItem newRoot){
+        if(control == null){
+            control = CalcController.getInstance();
+        }
+        control.setRoot(newRoot);
+    }
+
+    protected EquationItem getRoot(){
+        if(control == null){
+            control = CalcController.getInstance();
+        }
+        return control.getRoot();
     }
 
     public abstract void newOperator(Operator newOperator);

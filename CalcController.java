@@ -26,15 +26,13 @@ public class CalcController implements ActionListener{
             case "7":
             case "8":
             case "9":
-                System.out.println("New Operand()");
-                currentState.newOperand(new Operand(0));
+                currentState.newOperand(new Operand(Integer.parseInt(e.getActionCommand())));
                 break;
             case "+":
             case "-":
             case "*":
             case "/":
-                System.out.println("New Operator()");
-                currentState.newOperator(new Operator(null,null ));
+                currentState.newOperator(new Operator(e.getActionCommand()));
                 break;
             case "C":
                 System.out.println("Clear");
@@ -42,7 +40,6 @@ public class CalcController implements ActionListener{
                 currentState = new StateStart();
                 break;
             case "=":
-                System.out.println("Equals");
                 currentState.calculate();
                 break;
             default:

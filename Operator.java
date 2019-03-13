@@ -1,14 +1,10 @@
 public class Operator implements EquationItem{
     private EquationItem myLeft;
     private EquationItem myRight;
+    private String myType;
 
-    public Operator(EquationItem left){
-        myLeft = left;
-    }
-
-    public Operator(EquationItem left, EquationItem right){
-        myLeft = left;
-        myRight = right;
+    public Operator(String type){
+        myType = type;
     }
 
     public EquationItem getRight(){
@@ -17,5 +13,17 @@ public class Operator implements EquationItem{
 
     public EquationItem getLeft(){
         return myLeft;
+    }
+
+    public String getType(){
+        return myType;
+    }
+
+    public void setRight(EquationItem newRight){
+        myRight = newRight;
+    }
+
+    public void setLeft(EquationItem newLeft){
+        myLeft = newLeft;
     }
 }

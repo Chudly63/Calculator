@@ -8,4 +8,8 @@ public class Operand implements EquationItem{
     public int getValue(){
         return myValue;
     }
+
+    public void setValue(int i){
+        myValue = i;
+    }
 }

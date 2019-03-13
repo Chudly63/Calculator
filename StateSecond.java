@@ -12,6 +12,7 @@ public class StateSecond extends State{
     }
 
     public void calculate(){
+        System.out.println("CALCULATE");
         System.out.println("Second -> Start");   
         setState(new StateStart());
 
