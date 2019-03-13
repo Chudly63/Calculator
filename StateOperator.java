@@ -6,6 +6,11 @@ public class StateOperator extends State{
 
     public void newOperand(Operand newOperand){
         System.out.println("Operator -> Second");  
+
+        Operator currentRoot = (Operator)getRoot();
+        currentRoot.setRight(newOperand);
+        setRoot(currentRoot);
+
         setState(new StateSecond());    
     }
 

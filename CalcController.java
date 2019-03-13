@@ -14,7 +14,7 @@ public class CalcController implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println(e.getActionCommand());
+        //System.out.println(e.getActionCommand());
         switch(e.getActionCommand()){
             case "0":
             case "1":
@@ -45,6 +45,10 @@ public class CalcController implements ActionListener{
             default:
                 System.out.println("oops");
         }
+        VisitorPrint test = new VisitorPrint();
+        if(root != null)
+            root.accept(test);
+        System.out.println("");
     }
 
     public EquationItem getRoot(){
