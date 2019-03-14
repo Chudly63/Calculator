@@ -6,7 +6,8 @@ public class VisitorPrint implements Visitor{
     }
 
     public String visitOperator(Operator operator){
-        String left = operator.getLeft().accept(this);
+        VisitorCalculate hunch = new VisitorCalculate();
+        String left = operator.getLeft().accept(hunch) + " ";
         String right = "";
         if(operator.getRight() != null)
             right = operator.getRight().accept(this);

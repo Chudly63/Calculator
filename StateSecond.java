@@ -25,12 +25,7 @@ public class StateSecond extends State{
         System.out.println("Second -> Calc");   
 
         VisitorCalculate test = new VisitorCalculate();
-        String result = getRoot().accept(test);
-
-        //Remove trailing 0's and .'s
-        while((result.endsWith("0") && result.contains(".")) || result.endsWith(".")){
-            result = result.substring(0,result.length()-1);
-        }
+        String result = getRoot().accept(test);        
 
         setRoot(new Operand(result));
         setState(new StateCalc());
