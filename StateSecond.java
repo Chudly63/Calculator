@@ -15,9 +15,7 @@ public class StateSecond extends State{
 
         Operator currentRoot = (Operator)getRoot();
         Operand currentOperand = (Operand)currentRoot.getRight();
-        int currentValue = Integer.parseInt(currentOperand.getValue());
-        int newValue = currentValue * 10 + Integer.parseInt(newOperand.getValue());
-        currentOperand.setValue("" + newValue);
+        currentOperand.setValue(currentOperand.getValue() + newOperand.getValue());
         currentRoot.setRight(currentOperand);
         setRoot(currentRoot);
 

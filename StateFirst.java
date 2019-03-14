@@ -12,10 +12,8 @@ public class StateFirst extends State{
     public void newOperand(Operand newOperand){
         System.out.println("First -> First");
 
-        Operand test = (Operand)getRoot();
-        int originalValue = Integer.parseInt(test.getValue());
-        int newValue = originalValue * 10 + Integer.parseInt(newOperand.getValue());
-        newOperand.setValue(""+newValue);
+        Operand currentRoot = (Operand)getRoot();
+        newOperand.setValue(currentRoot.getValue() + newOperand.getValue());
         //System.out.println(""+newValue);
         setRoot(newOperand);
         
