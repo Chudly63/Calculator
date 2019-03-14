@@ -40,6 +40,18 @@ public class CalcController implements ActionListener{
                 currentState = new StateStart();
                 break;
             case "=":
+
+
+                //For testing: DELETE LATER!
+                if(root != null){
+                    VisitorFullPrint fprint = new VisitorFullPrint();
+                    VisitorTreePrint tprint = new VisitorTreePrint();
+                    System.out.println("Equation: " + root.accept(fprint));
+                    System.out.println("Tree: \n" + root.accept(tprint));
+                }
+                //End Testing
+
+
                 currentState.calculate();
                 break;
             default:

@@ -10,6 +10,8 @@ public class CalcView{
     public void update(String text){
         tfDisplay.setText(text);
     }
+
+    
     public void display(){
 
         CalcController control = CalcController.getInstance();
