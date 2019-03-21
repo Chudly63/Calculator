@@ -1,4 +1,6 @@
-public class Operand implements EquationItem{
+import java.io.*;
+
+public class Operand implements EquationItem, Serializable{
     private String myValue;
 
     public Operand(String value){

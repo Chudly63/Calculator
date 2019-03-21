@@ -1,4 +1,4 @@
-view:
+run:
 	javac Calculator.java
 	java Calculator
 

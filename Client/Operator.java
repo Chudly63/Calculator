@@ -1,4 +1,6 @@
-public class Operator implements EquationItem{
+import java.io.*;
+
+public class Operator implements EquationItem, Serializable{
     private EquationItem myLeft;
     private EquationItem myRight;
     private String myType;

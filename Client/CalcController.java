@@ -44,10 +44,8 @@ public class CalcController implements ActionListener{
 
                 //For testing: DELETE LATER!
                 if(root != null){
-                    VisitorFullPrint fprint = new VisitorFullPrint();
-                    VisitorTreePrint tprint = new VisitorTreePrint();
-                    System.out.println("Equation: " + root.accept(fprint));
-                    System.out.println("Tree: \n" + root.accept(tprint));
+                    CalcClient client = new CalcClient();
+                    client.sendToServer(root);
                 }
                 //End Testing
 
