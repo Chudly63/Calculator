@@ -1,7 +1,14 @@
+import javax.swing.*;
+
 public class StateOperator extends State{
 
+    ErrorView popup = new ErrorView();
+
     public void newOperator(Operator newOperator){
-        System.out.println("ERROR | DISCARD");        
+        if(!popup.isDiscarded()){
+            setRoot(null);
+            setState(new StateStart());
+        }             
     }
 
     public void newOperand(Operand newOperand){
@@ -13,6 +20,9 @@ public class StateOperator extends State{
     }
 
     public void calculate(){        
-        System.out.println("ERROR | DISCARD");      
+        if(!popup.isDiscarded()){
+            setRoot(null);
+            setState(new StateStart());
+        }    
     }
 }

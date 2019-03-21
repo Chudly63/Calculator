@@ -1,5 +1,7 @@
 public class StateFirst extends State{
 
+    ErrorView popup = new ErrorView();
+
     public void newOperator(Operator newOperator){
         newOperator.setLeft(getRoot());
         setRoot(newOperator);
@@ -17,6 +19,9 @@ public class StateFirst extends State{
     }
 
     public void calculate(){
-        System.out.println("ERROR | DISCARD");
+        if(!popup.isDiscarded()){
+            setRoot(null);
+            setState(new StateStart());
+        }
     }
 }
