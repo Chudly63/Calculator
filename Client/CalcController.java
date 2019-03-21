@@ -1,3 +1,10 @@
+/*
+CalcController.java
+Alex M Brown
+
+Main controller for the calculator. Interprets button pushes and updates the view.
+*/
+
 import java.awt.event.*;
 
 public class CalcController implements ActionListener{
@@ -40,16 +47,6 @@ public class CalcController implements ActionListener{
                 currentState = new StateStart();
                 break;
             case "=":
-
-
-                //For testing: DELETE LATER!
-                if(root != null){
-                    CalcClient client = new CalcClient();
-                    client.sendToServer(root);
-                }
-                //End Testing
-
-
                 currentState.calculate();
                 break;
             default:

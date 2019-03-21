@@ -1,3 +1,10 @@
+/*
+VisitorFullPrint.java
+Alex M Brown
+
+Gets the string interpretation of an equation.
+*/
+
 public class VisitorFullPrint implements Visitor{
 
     public String visitOperand(Operand operand){

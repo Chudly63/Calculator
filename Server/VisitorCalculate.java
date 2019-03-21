@@ -1,3 +1,10 @@
+/*
+VisitorCalculate.java
+Alex M Brown
+
+Visitor pattern that calculates the value of an equation
+*/
+
 public class VisitorCalculate implements Visitor{
     public String visitOperand(Operand operand){
         return operand.getValue();

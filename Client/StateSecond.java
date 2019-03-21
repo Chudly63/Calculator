@@ -1,3 +1,10 @@
+/*
+StateSecond.java
+Alex M Brown
+
+State when the calculator is building the next operand
+*/
+
 public class StateSecond extends State{
 
     public void newOperator(Operator newOperator){
@@ -18,8 +25,11 @@ public class StateSecond extends State{
     }
 
     public void calculate(){
-        VisitorCalculate test = new VisitorCalculate();
-        String result = getRoot().accept(test);        
+        VisitorCalculate calculate = new VisitorCalculate();
+        String result = getRoot().accept(calculate);        
+
+        CalcClient client = new CalcClient();
+        client.sendToServer(getRoot());
 
         setRoot(new Operand(result));
         setState(new StateCalc());

@@ -1,3 +1,10 @@
+/*
+StateOperator.java
+Alex M Brown
+
+State when the calculator reads in the operator
+*/
+
 import javax.swing.*;
 
 public class StateOperator extends State{

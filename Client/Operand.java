@@ -1,3 +1,10 @@
+/*
+Operand.java
+Alex M Brown
+
+Simple leaf component
+*/
+
 import java.io.*;
 
 public class Operand implements EquationItem, Serializable{

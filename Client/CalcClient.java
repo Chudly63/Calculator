@@ -18,7 +18,10 @@ public class CalcClient{
             myInput.close();
             myOutput.close();
             socket.close();
-        }catch(Exception e){
+        }catch(ConnectException e){
+            System.out.println("Connection Failed");
+        }
+        catch(Exception e){
             e.printStackTrace();
         }
 

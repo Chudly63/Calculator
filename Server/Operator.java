@@ -1,3 +1,10 @@
+/*
+Operator.java
+Alex M Brown
+
+Basic component. Contains a left and right component.
+*/
+
 import java.io.*;
 
 public class Operator implements EquationItem, Serializable{

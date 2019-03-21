@@ -1,3 +1,10 @@
+/*
+ErrorView.java
+Alex M Brown
+
+Popup that alerts the user to invalid inputs
+*/
+
 import javax.swing.*;
 import java.awt.event.*;
 

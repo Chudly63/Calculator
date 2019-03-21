@@ -1,3 +1,10 @@
+/*
+CalcView.java
+Alex M Brown
+
+Creates the calculator view. The buttons are the user's method of interacting with the program.
+*/
+
 import javax.swing.*;
 import java.awt.event.*;
 

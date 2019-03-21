@@ -1,3 +1,10 @@
+/*
+StateStart.java
+Alex M Brown
+
+State when the calculator is initialized and cleared
+*/
+
 public class StateStart extends State{
 
     public void newOperator(Operator newOperator){

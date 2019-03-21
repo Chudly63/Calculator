@@ -1,3 +1,10 @@
+/*
+VisitorTreePrint.java
+Alex M Brown
+
+Gets the string interpretation of an equation tree.
+*/
+
 public class VisitorTreePrint implements Visitor{
 
     public String visitOperand(Operand operand){

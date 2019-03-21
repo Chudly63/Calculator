@@ -1,3 +1,10 @@
+/*
+StateFirst.java
+Alex M Brown
+
+State when the calculator is building the first operand
+*/
+
 public class StateFirst extends State{
 
     ErrorView popup = new ErrorView();

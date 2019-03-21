@@ -1,3 +1,10 @@
+/*
+State.java
+Alex M Brown
+
+State abstract. Extended by StateCalc, StateFirst, StateOperator, StateSecond, StateStart
+*/
+
 public abstract class State{
 
     private CalcController control;

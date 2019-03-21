@@ -1,3 +1,10 @@
+/*
+StateCalc.java
+Alex M Brown
+
+State when the calculator is displaying a result
+*/
+
 public class StateCalc extends State{
 
     public void newOperator(Operator newOperator){
