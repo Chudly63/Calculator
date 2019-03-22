@@ -18,7 +18,6 @@ public class CalcServer{
         while(true){
             Socket myClient = server.accept();
             try{
-                ObjectOutputStream myOutput = new ObjectOutputStream(myClient.getOutputStream());
                 ObjectInputStream myInput = new ObjectInputStream(myClient.getInputStream());
                 PrintWriter myWriter = new PrintWriter(new FileOutputStream("History.log", true));
                 

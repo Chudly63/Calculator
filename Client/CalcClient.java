@@ -1,9 +1,15 @@
+/*
+CalcClient.java
+Alex M Brown
+
+Connects to the Server and sends the Equation object
+*/
+
 import java.io.*;
 import java.net.*;
 
 public class CalcClient{
     private Socket socket;
-    private ObjectInputStream myInput;
     private ObjectOutputStream myOutput;
 
     public void sendToServer(EquationItem root){
@@ -11,11 +17,9 @@ public class CalcClient{
             socket = new Socket("localhost", 2400);
 
             myOutput = new ObjectOutputStream(socket.getOutputStream());
-            myInput = new ObjectInputStream(socket.getInputStream());
 
             myOutput.writeObject(root);
 
-            myInput.close();
             myOutput.close();
             socket.close();
         }catch(ConnectException e){

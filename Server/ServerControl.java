@@ -18,6 +18,7 @@ public class ServerControl extends Thread{
                 history.add(currentLine);
                 currentLine = br.readLine();
             }
+            br.close();
             return history;
         }catch(Exception e){
             e.printStackTrace();
