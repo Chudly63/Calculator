@@ -65,7 +65,7 @@ public class CalcView{
 
         tfDisplay.setBounds(10,10,240,50);
         tfDisplay.setEditable(false);
-        tfDisplay.setText("Welcome to Alex's Calculator");
+        tfDisplay.setText("");
 
 
         btnOne.addActionListener(control);

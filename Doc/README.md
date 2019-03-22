@@ -15,3 +15,8 @@ CalcClient
 
         mvn package
         java -cp target/CalcClient-1.0-SNAPSHOT.jar Calculator
+
+
+Video Demo:
+
+    https://www.youtube.com/watch?v=rwkxws92HtU&t=4s
