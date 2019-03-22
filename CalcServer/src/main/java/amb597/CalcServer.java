@@ -20,6 +20,7 @@ public class CalcServer{
             try{
                 ObjectInputStream myInput = new ObjectInputStream(myClient.getInputStream());
                 PrintWriter myWriter = new PrintWriter(new FileOutputStream("History.log", true));
+                PrintWriter myTreeWriter = new PrintWriter(new FileOutputStream("Trees.log", true));
                 
                 Object read;
                 EquationItem root;
@@ -27,6 +28,7 @@ public class CalcServer{
     
                 VisitorFullPrint printer = new VisitorFullPrint();
                 VisitorCalculate calculate = new VisitorCalculate();
+                VisitorTreePrint treePrinter = new VisitorTreePrint();
     
                 try{
                     read = myInput.readObject();
@@ -34,6 +36,9 @@ public class CalcServer{
                     message = root.accept(printer) + "= " + root.accept(calculate);
                     myWriter.println(message);
                     myWriter.close();
+
+                    myTreeWriter.println(root.accept(treePrinter) + "\n");
+                    myTreeWriter.close();
     
                 }catch(Exception e){
                     e.printStackTrace();

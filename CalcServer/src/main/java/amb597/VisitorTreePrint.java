@@ -12,7 +12,6 @@ public class VisitorTreePrint implements Visitor{
         return operand.getValue();
     }
 
-    //TODO: ADD ENOUGH SPACING FOR LARGE NUMBERS
     public String visitOperator(Operator operator){
         String left = operator.getLeft().accept(this);
         String right = "";

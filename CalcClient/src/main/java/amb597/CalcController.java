@@ -52,10 +52,12 @@ public class CalcController implements ActionListener{
             default:
                 System.out.println("oops");
         }
-        VisitorPrint test = new VisitorPrint();
+
+        //Update the view
+        VisitorPrint printer = new VisitorPrint();
 
         if(root != null)
-            update(root.accept(test));
+            update(root.accept(printer));
         else   
             update("");
 

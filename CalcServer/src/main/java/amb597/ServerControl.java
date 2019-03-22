@@ -52,6 +52,9 @@ public class ServerControl extends Thread{
                     PrintWriter deleter = new PrintWriter("History.log");
                     deleter.write("");
                     deleter.close();
+                    deleter = new PrintWriter("Trees.log");
+                    deleter.write("");
+                    deleter.close();
                 }
             }catch(Exception e){}
         }
